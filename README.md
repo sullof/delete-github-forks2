@@ -1,6 +1,6 @@
 # Delete GitHub Forks
 
-_(ORIGINALLY FORKED FROM https://github.com/yangshun/delete-github-forks BUT NO MORE COMPATIBLE)_
+_(REPO ORIGINALLY FORKED FROM https://github.com/yangshun/delete-github-forks BUT NO MORE COMPATIBLE)_
 
 Delete your forked GitHub repositories easily in two steps.
 
