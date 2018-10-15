@@ -1,5 +1,7 @@
 # Delete GitHub Forks
 
+_(ORIGINALLY FORKED FROM https://github.com/yangshun/delete-github-forks BUT NO MORE COMPATIBLE)_
+
 Delete your forked GitHub repositories easily in two steps.
 
 **Note:** Node 8+ is required because some new language features are used.
