@@ -1,6 +1,6 @@
 {
   "name": "delete-github-forks",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Delete your Github forks.",
   "main": "fetch-repos.js",
   "dependencies": {
@@ -9,6 +9,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "fetch": "source .env && node src/fetch-repos",
+    "delete": "source .env && node src/delete-repos",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yangshun Tay",

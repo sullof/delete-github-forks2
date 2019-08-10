@@ -1,11 +1,11 @@
 const axios = require('axios');
-const config = require('../config/config');
+const config = require('./config');
 const path = require('path');
 const fs = require('fs-extra');
 
 try {
 
-  const rfdPath = path.resolve(__dirname, '../reposForDeletion.json');
+  const rfdPath = path.join(config.data_dir, 'reposForDeletion.json');
   const reposForDeletion = require(rfdPath);
   const deleted = [];
   const notDeleted = [];

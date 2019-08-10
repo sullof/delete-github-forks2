@@ -1,11 +1,11 @@
 const axios = require('axios');
 const fs = require('fs-extra');
-const config = require('../config/config');
+const config = require('./config');
 const path = require('path');
 
 let whitelist = [];
-if (fs.existsSync(path.resolve(__dirname, '../config/whitelist.json'))) {
-  whitelist = require('../config/whitelist');
+if (fs.existsSync(path.resolve(config.data_dir, 'whitelist.json'))) {
+  whitelist = require('../data/whitelist');
 }
 
 const username = config.github_username;
@@ -52,5 +52,5 @@ async function fetchRepos(url) {
 fetchRepos(URL).then(result => {
   console.log('Forked repos found:', result.length);
   console.log(result.join('\n'));
-  fs.writeFileSync(path.resolve(__dirname, '../reposForDeletion.json'), JSON.stringify(result, null, 2));
+  fs.writeFileSync(path.join(config.data_dir, 'reposForDeletion.json'), JSON.stringify(result, null, 2));
 });

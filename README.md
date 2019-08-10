@@ -16,20 +16,27 @@ Clone this repository.
 
 ```
 $ npm install
-$ cp src/config.json.example src/config.json
 ```
 
-Add your GitHub username and access token to `config.json`. To get the access token, go to [this page](https://github.com/settings/tokens/new) and create a token that has the following permissions: `public_repo` and `delete_repo`. For better security you can use the `config.example.js` and use ENV variables for GitHub username and access token.
+Create in your root folder the _gitignored_ file `.env` and put inside something like:
+
+```
+export GITHUB_API=https://api.github.com
+export GITHUB_ACCESS_TOKEN=xxxxxxxxxxxxxxxx
+export GITHUB_USER=yyyyy
+```
+
+To get the access token, go to [this page](https://github.com/settings/tokens/new) and create a token that has the following permissions: `public_repo` and `delete_repo`.
 
 ## Usage
 
 Firstly, run the following command to fetch all your forked repositories.
 
 ```sh
-$ node src/fetch-repos.js
+$ npm run fetch
 ```
 
-A JSON file, `reposForDeletion.json` containing an array of your forked repositories will be written into the root directory.
+A JSON file, `reposForDeletion.json` containing an array of your forked repositories will be written into the `/data` directory.
 
 **The repositories inside `reposForDeletion.json` will be deleted. It is an irreversible operation. Use with great caution!**.
 
@@ -38,7 +45,7 @@ So, before running the next command, manually inspect `reposForDeletion.json` an
 Finally, to delete all the repos in `reposForDeletion.json`, run
 
 ```sh
-$ node src/delete-repos.js
+$ npm run delete
 ```
 
 Done. It's that easy.
@@ -49,7 +56,7 @@ Done. It's that easy.
 A better option to avoid deleting important forks is to create a `whitelist.json` config file. To create it run
 ```sh
 $ node src/fetch-repos.js
-$ mv reposForDeletions.json config/whitelist.json
+$ mv data/reposForDeletions.json data/whitelist.json
 ```
 After, edit the `whitelist.json` file, leave in it only the repos you don't want to delete and run again
 ```sh
