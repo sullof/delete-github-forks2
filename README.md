@@ -1,4 +1,4 @@
-# Delete GitHub Forks
+# Delete GitHub Forks 2
 
 _(REPO ORIGINALLY FORKED FROM https://github.com/yangshun/delete-github-forks BUT NO MORE COMPATIBLE)_
 
