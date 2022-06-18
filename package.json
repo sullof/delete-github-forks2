@@ -1,6 +1,6 @@
 {
   "name": "delete-github-forks",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Delete your Github forks.",
   "main": "fetch-repos.js",
   "dependencies": {

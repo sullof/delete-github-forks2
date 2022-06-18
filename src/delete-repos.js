@@ -29,9 +29,10 @@ try {
       await axios({
         method: 'delete',
         url: URL,
-        params: {
-          access_token: config.access_token,
+        headers: {
+          Authorization: config.access_token
         },
+        params: {},
       }).then(() => {
         console.log(`${repo} deleted!`);
         deleted.push(repo);

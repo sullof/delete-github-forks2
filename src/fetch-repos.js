@@ -17,9 +17,11 @@ async function fetchRepos(url) {
   let stopFinding = false;
   while (!stopFinding) {
     await axios.get(url, {
+      headers: {
+        Authorization: config.access_token
+      },
       params: {
-        page,
-        access_token: config.access_token,
+        page
       },
     }).then(res => {
       if (res.data.length === 0) {
